@@ -163,21 +163,23 @@ export default {
         },
         type: {
             label: { en: 'Input type', fr: 'Input type' },
-            type: 'TextSelect',
-            options: {
-                options: [
-                    { value: 'text', label: { en: 'Short answer', fr: 'Texte' } },
-                    { value: 'textarea', label: { en: 'Long answer', fr: 'Texte' } },
-                    { value: 'email', label: { en: 'Email', fr: 'Email' } },
-                    { value: 'search', label: { en: 'Search', fr: 'Recherche' } },
-                    { value: 'password', label: { en: 'Password', fr: 'Mot de passe' } },
-                    { value: 'number', label: { en: 'Number', fr: 'Nombre' } },
-                    { value: 'decimal', label: { en: 'Decimal', fr: 'Decimal' } },
-                    { value: 'date', label: { en: 'Date', fr: 'Date' } },
-                    { value: 'time', label: { en: 'Time', fr: 'Heure' } },
-                    { value: 'tel', label: { en: 'Phone', fr: 'Téléphone' } },
-                ],
-            },
+            // type: 'TextSelect',
+            // options: {
+            //     options: [
+            //         { value: 'text', label: { en: 'Short answer', fr: 'Texte' } },
+            //         { value: 'textarea', label: { en: 'Long answer', fr: 'Texte' } },
+            //         { value: 'email', label: { en: 'Email', fr: 'Email' } },
+            //         { value: 'search', label: { en: 'Search', fr: 'Recherche' } },
+            //         { value: 'password', label: { en: 'Password', fr: 'Mot de passe' } },
+            //         { value: 'number', label: { en: 'Number', fr: 'Nombre' } },
+            //         { value: 'decimal', label: { en: 'Decimal', fr: 'Decimal' } },
+            //         { value: 'date', label: { en: 'Date', fr: 'Date' } },
+            //         { value: 'time', label: { en: 'Time', fr: 'Heure' } },
+            //         { value: 'tel', label: { en: 'Phone', fr: 'Téléphone' } },
+            //     ],
+            // },
+            bindable: true,
+
             section: 'settings',
             defaultValue: 'text',
         },
@@ -292,36 +294,38 @@ export default {
             hidden: content => content.type !== 'textarea',
             defaultValue: false,
         },
-        min: {
-            label: { en: 'Min number', fr: 'Min number' },
-            type: 'Number',
-            options: { min: 0, max: 100 },
-            section: 'settings',
-            hidden: content => content.type !== 'number' && content.type !== 'decimal',
-            defaultValue: '0',
-            bindable: true,
-            /* wwEditor:start */
-            bindingValidation: {
-                type: 'number',
-                tooltip: 'A number that defines the minimum value: `50`',
-            },
-            /* wwEditor:end */
-        },
-        max: {
-            label: { en: 'Max number', fr: 'Max number' },
-            type: 'Number',
-            options: { min: 0, max: 10000 },
-            section: 'settings',
-            hidden: content => content.type !== 'number' && content.type !== 'decimal',
-            defaultValue: '10000',
-            bindable: true,
-            /* wwEditor:start */
-            bindingValidation: {
-                type: 'number',
-                tooltip: 'A number that defines the maximum value: `500`',
-            },
-            /* wwEditor:end */
-        },
+        // use attributes
+        // min: {
+        //     label: { en: 'Min number', fr: 'Min number' },
+        //     type: 'Number',
+        //     options: { min: 0, max: 100 },
+        //     section: 'settings',
+        //     hidden: content => content.type !== 'number' && content.type !== 'decimal',
+        //     defaultValue: '0',
+        //     bindable: true,
+        //     /* wwEditor:start */
+        //     bindingValidation: {
+        //         type: 'number',
+        //         tooltip: 'A number that defines the minimum value: `50`',
+        //     },
+        //     /* wwEditor:end */
+        // },
+        // use attributes
+        // max: {
+        //     label: { en: 'Max number', fr: 'Max number' },
+        //     type: 'Number',
+        //     options: { min: 0, max: 10000 },
+        //     section: 'settings',
+        //     hidden: content => content.type !== 'number' && content.type !== 'decimal',
+        //     defaultValue: '10000',
+        //     bindable: true,
+        //     /* wwEditor:start */
+        //     bindingValidation: {
+        //         type: 'number',
+        //         tooltip: 'A number that defines the maximum value: `500`',
+        //     },
+        //     /* wwEditor:end */
+        // },
         hideArrows: {
             label: { en: 'Hide arrows', fr: 'Masquer les flèches' },
             type: 'OnOff',

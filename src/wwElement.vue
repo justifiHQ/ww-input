@@ -1,11 +1,11 @@
 <template>
-    <div class="ww-input-basic" :class="{ editing: isEditing }">
+    <div class="ww-input" :class="{ editing: isEditing }">
         <input
             v-if="content.type !== 'textarea'"
             ref="input"
             v-bind="{ ...$attrs, ...(wwElementState.props.attributes || {}) }"
             :value="value"
-            class="ww-input-basic__input"
+            class="ww-input__input"
             :class="{
                 editing: isEditing,
                 hideArrows: content.hideArrows && inputType === 'number',
@@ -17,8 +17,7 @@
             :required="content.required"
             :placeholder="isAdvancedPlaceholder ? '' : wwLang.getText(content.placeholder)"
             :style="style"
-            :min="content.min"
-            :max="content.max"
+            
             :step="stepAttribute"
             @input="handleManualInput($event)"
             @blur="onBlur($event)"
@@ -29,7 +28,7 @@
             ref="input"
             v-bind="{ ...$attrs, ...(wwElementState.props.attributes || {}) }"
             :value="value"
-            class="ww-input-basic__input"
+            class="ww-input__input"
             :class="{ editing: isEditing }"
             :type="content.type"
             :name="wwElementState.name"
@@ -45,7 +44,7 @@
         <div
             v-if="isAdvancedPlaceholder"
             ref="placeholder"
-            class="ww-input-basic__placeholder"
+            class="ww-input__placeholder"
             :class="{ editing: isEditing }"
             :style="placeholderSyle"
             @click="focusInput"
@@ -369,7 +368,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.ww-input-basic {
+.ww-input {
     width: 100%;
     height: 100%;
 
